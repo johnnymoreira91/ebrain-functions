@@ -1,5 +1,28 @@
 const moment = require('moment-timezone')
 
+function MediaDay (array) {
+  let data = ChangeDate(array)
+  data = data.sort(sortDate)
+  let diffDays = DiffDays(data)
+  const dateArray = []
+  let mapDates = data.map(obj => obj.data)
+  mapDates = [...new Set(mapDates)]
+  for (const date of mapDates) {
+    let filterDay = data.filter(obj => obj.data === date)
+    const total = ReduceTotal(filterDay)
+    let media = getMedia(diffDays, total)
+    media = Math.round(media * 100) / 100
+    let result = {
+      diff: diffDays,
+      total_passagens: total,
+      media_passagens: media
+    }
+    dateArray.push(result)
+  }
+  return dateArray
+}
+
+
 function Media(array) {
   let data = ChangeDate(array)
   data = data.sort(sortDate)
@@ -64,5 +87,6 @@ module.exports = {
   getMedia,
   ReduceTotal,
   sortDate,
-  DiffDays
+  DiffDays,
+  MediaDay
 }

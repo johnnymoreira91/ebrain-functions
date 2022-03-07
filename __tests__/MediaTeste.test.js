@@ -1,4 +1,4 @@
-const { ChangeDate, ReduceTotal, Media } = require('../index')
+const { ChangeDate, ReduceTotal, Media, MediaDay } = require('../index')
 
 let array = [
   { id: 1, data: '2022-03-06T19:02:03.704Z', qtde_passagem_dia: 1542 },
@@ -23,8 +23,19 @@ describe('my beverage', () => {
     expect(total).toBe(97309)
   });
 
-  test('Should Reduce qtde_passagem_dia', () => {
-    expect(Media(array).media_passagens).toBe(16218.17)
-    expect(Media(array).diff).toBe(6)
+  test('Should Reduce qtde_passagem_dia and diff', () => {
+    expect(Media(array).media_passagens).toBe(13901.29)
+    expect(Media(array).diff).toBe(7)
+  });
+
+  test('Should get MediaDay', () => {
+    array.push({
+      id: 6,
+      data: '2022-02-28T19:02:03.704Z',
+      qtde_passagem_dia: 1
+    })
+    let arrayOfData = MediaDay(array)
+    expect(arrayOfData[0].media_passagens).toBe(14.43)
+    expect(arrayOfData[0].diff).toBe(7)
   });
 });
