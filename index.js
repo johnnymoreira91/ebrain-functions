@@ -14,6 +14,7 @@ function MediaDay (array) {
     media = Math.round(media * 100) / 100
     let result = {
       diff: diffDays,
+      date: date,
       total_passagens: total,
       media_passagens: media
     }
