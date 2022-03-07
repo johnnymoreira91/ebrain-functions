@@ -7,8 +7,12 @@ function Media(array) {
   const total = ReduceTotal(data) //qtde_passagem_dia
   let media = getMedia(diffDays, total)
   media = Math.round(media * 100) / 100
-  console.log(media)
-  return media
+  let result = {
+    diff: diffDays,
+    total_passagens: total,
+    media_passagens: media
+  }
+  return result
 }
 
 // qtde_passagem_dia

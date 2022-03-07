@@ -1,6 +1,6 @@
 {
   "name": "ebrain-functions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "functions to ebrain",
   "main": "index.js",
   "scripts": {

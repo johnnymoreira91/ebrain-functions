@@ -24,6 +24,7 @@ describe('my beverage', () => {
   });
 
   test('Should Reduce qtde_passagem_dia', () => {
-    expect(Media(array)).toBe(16218.17)
+    expect(Media(array).media_passagens).toBe(16218.17)
+    expect(Media(array).diff).toBe(6)
   });
 });
