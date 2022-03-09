@@ -1,11 +1,11 @@
 const moment = require('moment-timezone')
 
 let arrayObj = [
-  { id: 1, data: '2022-03-06T19:02:03.704Z', qtde_passagem_dia: 1542 },
-  { id: 2, data: '2022-03-05T19:02:03.704Z', qtde_passagem_dia: 12 },
-  { id: 3, data: '2022-03-04T19:02:03.704Z', qtde_passagem_dia: 95654 },
-  { id: 4, data: '2022-02-28T19:02:03.704Z', qtde_passagem_dia: 100 },
-  { id: 5, data: '2022-03-01T19:02:03.704Z', qtde_passagem_dia: 1 }
+  { id: 1, data: '2022-03-06T19:02:03.704Z', _sum: { qtde_passagem_dia: 1542, qtde_infracao_dia: 5 }},
+  { id: 2, data: '2022-03-05T19:02:03.704Z', _sum: { qtde_passagem_dia: 12, qtde_infracao_dia: 1} },
+  { id: 3, data: '2022-03-04T19:02:03.704Z', _sum: { qtde_passagem_dia: 95654, qtde_infracao_dia: 100 } },
+  { id: 4, data: '2022-02-28T19:02:03.704Z', _sum: { qtde_passagem_dia: 100, qtde_infracao_dia: 3 } },
+  { id: 5, data: '2022-03-01T19:02:03.704Z', _sum: { qtde_passagem_dia: 1, qtde_infracao_dia: 0 } }
 ]
 module.exports = {
   arrayObj
